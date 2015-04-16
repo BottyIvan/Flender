@@ -5,7 +5,8 @@ Servo servoRightFront;         // Define right servo
 Servo servoLeftRear;         // Define right servo
 Servo servoRightRear;         // Define right servo
 
-int ang = 25;
+int ang = 15;
+int time = 500;
 
 void setup() { 
   servoLeftFront.attach(2);  // Set left servo to digital pin 10
@@ -13,27 +14,40 @@ void setup() {
   servoLeftRear.attach(5);
   servoRightRear.attach(6);
 } 
-void loop() {            // Loop through motion tests
-  turnFront();
-  backRear();
-  delay(225);
-  turnRear();
-  backRear();
-  delay(225);
+void loop() {   
+ // Loop through motion tests
+  Kinping();
+  delay(time);
+  ReverseFlash();
+  delay(time); 
+  Senpai();
+  delay(time);
+  Senin();
+  delay(time);
+
 }
-void turnFront() {
+void Senpai() {
   servoLeftFront.write(ang);
   servoRightFront.write(ang);
-}
-void turnRear(){
-  servoRightFront.write(ang);
+  
+  servoLeftRear.write(ang);
   servoRightRear.write(ang);
 }
-void backFront() {
+void Senin(){
   servoLeftFront.write(0);
   servoRightFront.write(0);
+  servoLeftRear.write(0);
+  servoRightRear.write(0);
 }
-void backRear(){
+void ReverseFlash(){
+  servoLeftFront.write(ang);
+  servoRightFront.write(ang);
+  servoLeftRear.write(ang);
+  servoRightRear.write(ang);
+}
+void Kinping(){
+  servoLeftFront.write(0);
   servoRightFront.write(0);
+  servoLeftRear.write(0);
   servoRightRear.write(0);
 }
