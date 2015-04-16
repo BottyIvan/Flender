@@ -9,7 +9,6 @@ you can find it here: <a href="http://www.thingiverse.com/thing:272233">Thingive
 <h2>What we used to do this:</2>
 - Hardware:<br>
   . <a href="https://www.futurashop.it/index.php?route=product/product&path=4001_1074_4113&product_id=403">3DRAG - Stampante 3D versione 1.2 - in Kit</a><br>
-
   . <a href="https://www.futurashop.it/index.php?route=product/product&path=4108_4111&product_id=2563">Shield per ARDUSPIDERIN, ARDUBIPE e ARDUFILIPPO</a><br>
   . <a href="http://store.arduino.cc/index.php?main_page=product_info&cPath=11&products_id=195">Arduino</a><br>
   . <a href="https://www.futurashop.it/index.php?route=product/product&filter_name=micro+servo&product_id=1924">SUB MICRO SERVO 9g - 22x11x29 mm</a><br>
