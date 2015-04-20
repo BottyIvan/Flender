@@ -1,98 +1,48 @@
 #include <Servo.h>
 
-Servo servoLeftFront;          // Define left servo
-Servo servoRightFront;         // Define right servo
-Servo servoLeftRear;         // Define right servo
-Servo servoRightRear;         // Define right servo
-Servo servoTurn1;
-Servo servoTurn2;
+ 
+Servo ango1;
+Servo ango2;
+Servo ango3;
+Servo ango4;
+Servo piede1;
+Servo piede2;
+Servo piede3;
+Servo piede4;
 
-int ang_turn = 90;
-int rev_ang_turn = 180;
-int ang = 25;
-int time = 100;
+
+int ang=40;
+int ang_piede=20;
 int x=0;
+int y=0;
+int time=150;
 
-void setup() {
+void setup (){
   Serial.begin(57600);
-  servoLeftFront.attach(2);  // Set left servo to digital pin 10
-  servoRightFront.attach(3);  // Set right servo to digital pin 9
-  servoLeftRear.attach(4);
-  servoRightRear.attach(5);
-  servoTurn1.attach(6);
-  servoTurn2.attach(7);
+  ango1.attach(2);  // Set left servo to digital pin 10
+  ango2.attach(3);  // Set right servo to digital pin 9
+  ango3.attach(4);
+  ango4.attach(5);
+  piede1.attach(6);
+  piede2.attach(7);
+  piede3.attach(8);
+  piede4.attach(9);  
 }
-
-void loop() {
-  // Loop through motion tests
-  for (; x < 10; x++) {
-      Serial.print(x);
-      Kinping();
-      delay(time);
-      ReverseFlash();
-      delay(time);
-      Senpai();
-      delay(time);
-      Senin();
-      delay(time);
-      
-  }
-  Turn();
-  delay(1000);;
-  ReverseTurn();
+  
+  
+void loop(){
+  ango1.write(ang);  
+  delay(ang_piede);
+  ango2.write(ang);
   delay(time);
-  x=0;
-  for (; x < 50; x++) {
-      Serial.print(x);
-      Kinping();
-      delay(time);
-      ReverseFlash();
-      delay(time);
-      Senpai();
-      delay(time);
-      Senin();
-      delay(time);
-      
-  }
-    Turn();
-  delay(1000);;
-  ReverseTurn();
+  ango3.write(ang);
+  delay(ang_piede);
+  ango4.write(ang);
   delay(time);
-}
-
-void Turn() {
-  servoTurn1.write(0);
-  servoTurn2.write(0);
-}
-
-void ReverseTurn() {
-  servoTurn1.write(ang_turn);
-  servoTurn2.write(ang_turn);
-}
-
-void Senpai() {
-  servoLeftFront.write(ang);
-  servoRightFront.write(ang);
-  servoLeftRear.write(ang);
-  servoRightRear.write(ang);
-}
-
-void Senin() {
-  servoLeftFront.write(0);
-  servoRightFront.write(0);
-  servoLeftRear.write(0);
-  servoRightRear.write(0);
-}
-
-void ReverseFlash() {
-  servoLeftFront.write(ang);
-  servoRightFront.write(ang);
-  servoLeftRear.write(ang);
-  servoRightRear.write(ang);
-}
-void Kinping() {
-  servoLeftFront.write(0);
-  servoRightFront.write(0);
-  servoLeftRear.write(0);
-  servoRightRear.write(0);
+  ango1.write(0);
+  ango2.write(0);
+  delay(time);
+  ango3.write(0);
+  ango4.write(0);
+  delay(time);
 }
