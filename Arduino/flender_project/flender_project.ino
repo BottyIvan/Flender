@@ -12,10 +12,10 @@ Servo piede4;
 
 
 int ang=40;
-int ang_piede=20;
+int ang_piede=15;
 int x=0;
 int y=0;
-int time=150;
+int time=200;
 
 void setup (){
   Serial.begin(57600);
@@ -26,23 +26,34 @@ void setup (){
   piede1.attach(6);
   piede2.attach(7);
   piede3.attach(8);
-  piede4.attach(9);  
+  piede4.attach(9); 
 }
   
   
 void loop(){
-  ango1.write(ang);  
-  delay(ang_piede);
+  piede1.write(0);
+  ango1.write(ang); 
+  delay(time);
+  piede1.write(ang_piede); 
+  delay(time);
+  piede2.write(0);
   ango2.write(ang);
   delay(time);
-  ango3.write(ang);
-  delay(ang_piede);
-  ango4.write(ang);
+  piede2.write(ang_piede); 
+  delay(time);
+  piede3.write(0);
+  ango3.write(0);
+  delay(time);
+  piede3.write(ang_piede); 
+  delay(time);
+  piede4.write(0);
+  ango4.write(0);
+  delay(time);
+  piede4.write(ang_piede); 
   delay(time);
   ango1.write(0);
   ango2.write(0);
-  delay(time);
-  ango3.write(0);
-  ango4.write(0);
+  ango3.write(ang);
+  ango4.write(ang);
   delay(time);
 }
